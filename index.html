@@ -114,6 +114,40 @@ header{position:sticky;top:0;z-index:50;background:rgba(15,23,51,.94);backdrop-f
 .m h3{font-size:15.5px}.m span{display:block;color:#ff8a76;font-size:13px;font-weight:600;margin-top:3px}
 .sub{margin:46px 0 0;font:600 13px var(--b);letter-spacing:.14em;text-transform:uppercase;color:#8e97b8}
 .alum{display:flex;flex-wrap:wrap;gap:10px;margin-top:16px}.alum span{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);padding:6px 14px;border-radius:999px;font-size:13.5px;color:#d5daea}
+/* members v4 */
+.mg{display:grid;grid-template-columns:repeat(5,1fr);gap:16px;margin-top:24px}
+.mc{--c:#ff8a76;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.09);border-radius:20px;padding:10px 10px 18px;text-align:center;transition:.3s}
+.mc:hover{transform:translateY(-6px);background:rgba(255,255,255,.08);border-color:var(--c);box-shadow:0 18px 40px rgba(0,0,0,.35)}
+.mc .mp{aspect-ratio:1/1;border-radius:14px;overflow:hidden;background:var(--navy);margin-bottom:14px;position:relative}
+.mc .mp img{width:100%;height:100%;object-fit:cover;object-position:center 18%;transition:.4s}
+.mc:hover .mp img{transform:scale(1.06)}
+.mc .mp:after{content:"";position:absolute;left:0;right:0;bottom:0;height:4px;background:var(--c)}
+.mc .ini{font-size:34px}
+.mc h3{font-size:15.5px;line-height:1.3;padding:0 6px}
+.mc .tag{display:inline-block;margin-top:8px;padding:4px 12px;border-radius:999px;font:600 12px var(--b);color:var(--c);background:color-mix(in srgb,var(--c) 14%,transparent);border:1px solid color-mix(in srgb,var(--c) 35%,transparent)}
+#lead .m{width:calc(20% - 15px)}
+@media(max-width:1000px){.mg{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:960px){#lead .m{width:calc(50% - 9px)}}
+@media(max-width:560px){.mg{grid-template-columns:repeat(2,1fr);gap:12px}}
+/* alumni marquee */
+.alw{margin-top:18px;overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent)}
+.alt2{display:flex;gap:14px;width:max-content;animation:mq 50s linear infinite}
+.alw:hover .alt2{animation-play-state:paused}
+@keyframes mq{to{transform:translateX(-50%)}}
+.ac{display:flex;align-items:center;gap:12px;padding:8px 20px 8px 8px;border-radius:999px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);white-space:nowrap}
+.ac .pic{width:46px;height:46px;border-radius:50%;overflow:hidden;background:var(--navy);flex:none}
+.ac .pic img{width:100%;height:100%;object-fit:cover;object-position:center 18%}
+.ac .ini{font-size:15px}
+.ac h3{font-size:14.5px;font-weight:600}
+@media(prefers-reduced-motion:reduce){.alt2{animation:none}.alw{overflow-x:auto}}
+/* join v2 */
+.jn{display:grid;grid-template-columns:1.1fr 1fr;gap:56px;align-items:center;text-align:left}
+.jn h2{margin-bottom:16px}.jn .lead{margin:0 0 30px}
+.jf{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.jf div{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.18);border-radius:18px;padding:22px 20px}
+.jf small{display:block;font:600 11.5px var(--b);letter-spacing:.14em;text-transform:uppercase;color:#f6d3cc;margin-bottom:8px}
+.jf b{font:600 16px/1.4 var(--b);color:#fff}
+@media(max-width:960px){.jn{grid-template-columns:1fr;gap:34px}.jf{grid-template-columns:1fr}}
 /* partners & join */
 .why{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:40px}
 .wy{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:28px;border-top:4px solid var(--red)}.wy:nth-child(2){border-top-color:var(--navy)}
@@ -211,8 +245,8 @@ section{padding:64px 0}.hero{padding-top:90px}}
  <div class="eb">Season 26/27 · SDC27</div><h2>Meet the team</h2>
  <p class="lead">The students leading our structural, architectural, media and operations work this season.</p>
  <div class="pres" id="pres"></div><div class="tg l4" id="lead"></div>
- <div class="sub">Members</div><div class="tg l5" id="mem"></div>
- <div class="sub">Our alumni — the backbone of our success</div><div class="alum" id="alum"></div>
+ <div class="sub">Members</div><div class="mg" id="mem"></div>
+ <div class="sub">Our alumni — the backbone of our success</div><div class="alw"><div class="alt2" id="alum"></div></div>
 </div></section>
 
 <section id="partners" class="alt"><div class="wrap">
@@ -228,11 +262,16 @@ section{padding:64px 0}.hero{padding-top:90px}}
  </div>
 </div></section>
 
-<section id="join" class="join"><div class="wrap">
- <div class="eb">Recruitment</div><h2>Ready to join Season 26/27?</h2>
- <p class="lead">Open to HTI students of civil engineering and architecture. No experience needed — just curiosity and commitment. Learn real software, build real models and compete internationally.</p>
- <div class="cm"><span>Structural</span><span>Architectural</span><span>Fabrication</span><span>Public Relations</span><span>Logistics</span><span>Visual Communications</span></div>
- <a class="btn white" data-cfg="apply" href="#">Apply Now →</a>
+<section id="join" class="join"><div class="wrap jn">
+ <div><div class="eb">Recruitment</div><h2>Ready to join Season 26/27?</h2>
+ <p class="lead">Learn real software, build real models and compete internationally with a team that takes engineering seriously.</p>
+ <a class="btn white" data-cfg="apply" href="#">Apply Now →</a></div>
+ <div class="jf">
+  <div><small>Who can join</small><b>HTI students of civil engineering and architecture</b></div>
+  <div><small>Experience</small><b>None needed — just curiosity and commitment</b></div>
+  <div><small>You will learn</small><b>Real software and real structural models</b></div>
+  <div><small>Where it leads</small><b>International competitions</b></div>
+ </div>
 </div></section>
 </main>
 
@@ -282,8 +321,8 @@ const ALUMNI=[["Moazz Al-Maasry","moazz.jpg"],["Mostafa Abdellatief","mostafa.jp
 const card=(x,c)=>`<div class="m rv ${c||''}"><div class="av">${ph(T,x[2],x[0])}</div><h3>${x[0]}</h3><span>${x[1]}</span></div>`;
 document.getElementById("pres").innerHTML=card(["Abdulrahman Hussam","President","Abdulrahman Hussam_President.jpg"],"big");
 document.getElementById("lead").innerHTML=LEADS.map(x=>card(x)).join("");
-document.getElementById("mem").innerHTML=MEM.map(x=>card(x)).join("");
-document.getElementById("alum").innerHTML=ALUMNI.map(x=>`<div class="al rv"><div class="av">${ph("assets/alumni/",x[1],x[0])}</div><h3>${x[0]}</h3></div>`).join("");
+const DC={"Structural":"#ff8a76","Architecture":"#7fb2ff","Fabrication":"#f2c36b","Creative & Visual":"#b79cff"};
+document.getElementById("mem").innerHTML=MEM.map(x=>`<div class="mc rv" style="--c:${DC[x[1]]||"#ff8a76"}"><div class="mp">${ph(T,x[2],x[0])}</div><h3>${x[0]}</h3><span class="tag">${x[1]}</span></div>`).join("");
 {const al=ALUMNI.map(x=>`<div class="ac"><div class="pic">${ph("assets/alumni/",x[1],x[0])}</div><h3>${x[0]}</h3></div>`).join("");document.getElementById("alum").innerHTML=al+al}
 const IC={Facebook:'<svg viewBox="0 0 24 24"><path d="M22 12a10 10 0 1 0-11.6 9.9v-7H7.9V12h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.5h-1.3c-1.2 0-1.6.8-1.6 1.6V12h2.8l-.4 2.9h-2.3v7A10 10 0 0 0 22 12z"/></svg>',
 Email:'<svg class="o" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="M3.5 7l8.5 6 8.5-6"/></svg>',
