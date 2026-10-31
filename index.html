@@ -183,7 +183,7 @@ section{padding:64px 0}.hero{padding-top:90px}}
 <section id="towers"><div class="wrap">
  <div class="eb">Signature projects</div><h2>Two towers, two stories</h2>
  <div class="tw">
-  <article class="tc a rv"><img src="assets/photos/tori-render.jpg" alt="Tori Tower render" loading="lazy"><div><small>SDC 2025 · UC Berkeley</small><h3>Tori Tower</h3>
+  <article class="tc a rv"><img src="assets/photos/tori-render2.jpg" alt="Tori Tower render" loading="lazy"><div><small>SDC 2025 · UC Berkeley</small><h3>Tori Tower</h3>
    <p>A 19-story mixed-use tower inspired by Kobe’s Torii gate: commercial, cultural, office and hotel zones linked by a walkable spine, with a Kumiko-inspired double-skin façade. Balsa wood, designed to ASCE/SEI 7-22 Design Earthquake and MCER levels.</p>
    <div class="tags"><span>ETABS</span><span>AutoCAD</span><span>Revit</span><span>Outriggers</span><span>Kobe, Japan</span></div></div></article>
   <article class="tc b rv"><img src="assets/photos/pearl-frame.jpg" alt="The Pearl Tower during fabrication" loading="lazy"><div><small>Elevate &amp; Shake 2024 · BUE</small><h3>The Pearl Tower</h3>
@@ -276,14 +276,14 @@ function nx(i){const k=+i.dataset.k+1;if(k<EX.length){i.dataset.k=k;i.src=S+i.da
 document.getElementById("sp").innerHTML=SP.map(p=>`<div class="sc rv"><div class="lg"><img src="${S}${p[3]}.png" data-b="${p[3]}" data-k="0" alt="${p[1]}" onerror="nx(this)"></div><div><em>${p[0]} · ${p[2]}</em><h3>${p[1]}</h3></div></div>`).join("");
 const lb=document.getElementById("lb");
 document.getElementById("gal").onclick=e=>{if(e.target.tagName=="IMG"){lb.firstChild.src=e.target.src;lb.classList.add("on")}};lb.onclick=()=>lb.classList.remove("on");
-const LEADS=[["Ahmed Tarek","Structural Team Captain","Ahmed Tarek_Structural Team Captain.jpg"],["Sara Ahmed Ghanem","Architecture Team Captain","Sara.jpg"],["Zyad Abo Youssef","Fabrication Team Captain","Zyad.jpg"],["Ahmed Nabil Ibrahim","Public Relations Lead","Ahmed Nabil Ibrahim_Public Relations Lead.jpg"],["Ibrahim Hatem","Logistics Lead","Ibrahim.jpeg"],["Menna Elshazly","Creative & Visual Communications Lead","Menna.jpeg"],["Mahmoud Tarek","Corporate Coordinator","Mahmoud.jpeg"]];
-const MEM=[["Hassan Awd Allah","Fabrication","Hassan.jpg"],["Shaher Ramadan","Structural","shaher ramadan.png"],["El-Sayed Taher","Architecture","El-Sayed.jpg"],["Eylaf Gad","Creative & Visual","Eylaf.jpg"],["Malk Mahmoud","Creative & Visual","Malk.jpg"],["Mareez Melad","Architecture","Mareez.jpg"],["Mostafa Amin","Fabrication","Mostafa.jpg"],["Omnia Ahmed","Architecture","Omnia.jpg"]];
-const ALUMNI=["Moazz Al-Maasry","Mostafa Abdellatief","Abdulaziz Saeed","Ahmed Saber","Mohamed Imam","Karim Elfouly","Osama Safwat","Mahmoud Helaly","Abdullah Khaled","Hajar Ehab","Nada Osama","Haya Maged","Menna Okasha"];
+const LEADS=[["Ahmed Tarek","Structural Team Captain","Ahmed Tarek_Structural Team Captain.jpg"],["Ahmed Nabil Ibrahim","Public Relations Lead","Ahmed Nabil Ibrahim_Public Relations Lead.jpg"],["Ibrahim Hatem","Logistics Lead","Ibrahim.jpeg"],["Menna Elshazly","Creative & Visual Communications Lead","Menna.jpeg"],["Mahmoud Tarek","Corporate Coordinator","Mahmoud.jpeg"]];
+const MEM=[["Sara Ahmed Ghanem","Architecture","Sara.jpg"],["Zyad Abo Youssef","Fabrication","Zyad.jpg"],["Hassan Awd Allah","Fabrication","Hassan.jpg"],["Shaher Ramadan","Structural","shaher ramadan.png"],["El-Sayed Taher","Architecture","El-Sayed.jpg"],["Eylaf Gad","Creative & Visual","Eylaf.jpg"],["Malk Mahmoud","Creative & Visual","Malk.jpg"],["Mareez Melad","Architecture","Mareez.jpg"],["Mostafa Amin","Fabrication","Mostafa.jpg"],["Omnia Ahmed","Architecture","Omnia.jpg"]];
+const ALUMNI=[["Moazz Al-Maasry","moazz.jpg"],["Mostafa Abdellatief","mostafa.jpg"],["Abdulaziz Saeed","abdulaziz.jpg"],["Ahmed Saber","ahmed.jpg"],["Mohamed Imam","imam.jpg"],["Karim Elfouly","karim.jpg"],["Osama Safwat","osama.jpg"],["Mahmoud Helaly","halaly.jpg"],["Abdullah Khaled","abdullah.jpg"],["Hajar Ehab","hajar.jpg"],["Nada Osama","nada.jpg"],["Haya Maged","haya.jpg"],["Menna Okasha","menna.jpg"]];
 const card=(x,c)=>`<div class="m rv ${c||''}"><div class="av">${ph(T,x[2],x[0])}</div><h3>${x[0]}</h3><span>${x[1]}</span></div>`;
 document.getElementById("pres").innerHTML=card(["Abdulrahman Hussam","President","Abdulrahman Hussam_President.jpg"],"big");
 document.getElementById("lead").innerHTML=LEADS.map(x=>card(x)).join("");
 document.getElementById("mem").innerHTML=MEM.map(x=>card(x)).join("");
-document.getElementById("alum").innerHTML=ALUMNI.map(n=>`<span>${n}</span>`).join("");
+document.getElementById("alum").innerHTML=ALUMNI.map(x=>`<div class="al rv"><div class="av">${ph("assets/alumni/",x[1],x[0])}</div><h3>${x[0]}</h3></div>`).join("");
 const IC={Facebook:'<svg viewBox="0 0 24 24"><path d="M22 12a10 10 0 1 0-11.6 9.9v-7H7.9V12h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.5h-1.3c-1.2 0-1.6.8-1.6 1.6V12h2.8l-.4 2.9h-2.3v7A10 10 0 0 0 22 12z"/></svg>',
 Email:'<svg class="o" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="M3.5 7l8.5 6 8.5-6"/></svg>',
 LinkedIn:'<svg viewBox="0 0 24 24"><path d="M20.4 20.5h-3.6v-5.6c0-1.3 0-3-1.8-3s-2.1 1.4-2.1 2.9v5.7H9.3V9h3.4v1.6h.1c.5-.9 1.6-1.8 3.4-1.8 3.6 0 4.3 2.4 4.3 5.5v6.2zM5.3 7.4a2.1 2.1 0 1 1 0-4.2 2.1 2.1 0 0 1 0 4.2zM7.1 20.5H3.6V9h3.5v11.5z"/></svg>',
